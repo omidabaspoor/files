@@ -42,11 +42,11 @@ jobs:
         run: |
           set -euo pipefail
           ZIP="workspace-01a0078c-b64b-74c7-acb6-50546f38c794.zip"
-          EXPECTED_SHA256="397dd0d059775f2c3283b83e00b85ddf8fca45ebb6ea651ae238902f41aaeabd"
+          EXPECTED_SHA256="5fbb42583497ec5e1246bd35e3d58db1f1da3573f6209e91491956b1509a0465"
           test -f "$ZIP"
           echo "$EXPECTED_SHA256  $ZIP" | sha256sum --check --strict
           unzip -q "$ZIP" -d /tmp/athena-workspace
-          PROJECT="/tmp/athena-workspace/vmania-athena-runtime-poc-01b2"
+          PROJECT="/tmp/athena-workspace/vmania-athena-runtime-poc-01b3"
           test -f "$PROJECT/pyproject.toml"
           echo "PROJECT_DIR=$PROJECT" >> "$GITHUB_ENV"
 
